@@ -20,20 +20,20 @@ function App() {
   };
 
   return (
+    <>
     <div className="container">
-
       <h1>mimi generator</h1>
 
-      <Card variant="outlined">
-        <input
-          className='generateBtn'
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-        />
-      </Card>
+      <input
+        className='generateBtn'
+        type="file"
+        accept="image/*"
+        onChange={handleImageUpload}
+      />
 
-    </div>
+        <div className='footer'> made by Cuddlefish © </div>
+      </div>
+    </>
   );
 }
 
