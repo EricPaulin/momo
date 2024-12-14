@@ -24,6 +24,7 @@ function App() {
     <div className="container">
       <h1>mimi generator</h1>
 
+      {!image && (
       <Card variant='outlined'>
         <input
           className='generateBtn'
@@ -32,6 +33,13 @@ function App() {
           onChange={handleImageUpload}
         />
       </Card>
+      )}
+
+      {image && (
+        <Card variant='outlined'>
+          bruh moment
+        </Card>
+      )}
 
         <div className='footer'> made by Cuddlefish © </div>
       </div>
