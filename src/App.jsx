@@ -52,10 +52,10 @@ function App() {
 
   const handleDownload = () => {
     const canvas = canvasRef.current;
-    const dataUrl = canvas.toDataURL('image/png'); 
+    const dataUrl = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = dataUrl;
-    link.download = 'momo.png'; 
+    link.download = 'momo.png';
     link.click();
   };
 
@@ -86,31 +86,25 @@ function App() {
             sx={{ backgroundColor: '#434343', border: 'none', color: 'white' }}
           >
             <CardContent>
-              <canvas
-                ref={canvasRef}
-                width={600}
-                height={400}
-                style={{ display: 'block', marginTop: '20px' }}
-              />
+              {/* Meme Image Edit */}
+              <canvas ref={canvasRef} />
+
+              {/* Meme Font Edit */}
               <div className='textContainer'>
-                <div>
-                  <input
-                    type="text"
-                    id="topText"
-                    placeholder="top txt"
-                    value={topText}
-                    onChange={(e) => setTopText(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    id="bottomText"
-                    placeholder="bottom txt"
-                    value={bottomText}
-                    onChange={(e) => setBottomText(e.target.value)}
-                  />
-                </div>
+                <input
+                  type="text"
+                  id="topText"
+                  placeholder="top txt"
+                  value={topText}
+                  onChange={(e) => setTopText(e.target.value)}
+                />
+                <input
+                  type="text"
+                  id="bottomText"
+                  placeholder="bottom txt"
+                  value={bottomText}
+                  onChange={(e) => setBottomText(e.target.value)}
+                />
                 <button onClick={handleDownload}>MEMEIFY THAT BIH</button>
               </div>
             </CardContent>
