@@ -22,10 +22,12 @@ function App() {
   return (
     <>
     <div className="container">
-      <h1>mimi generator</h1>
+      <h1> momo generator </h1>
 
       {!image && (
-      <Card variant='outlined'>
+      <Card variant='outlined'
+        sx={{ backgroundColor: '#242424', border: 'none' , color: 'white'}}
+      >
         <input
           className='generateBtn'
           type="file"
@@ -36,7 +38,9 @@ function App() {
       )}
 
       {image && (
-        <Card variant='outlined'>
+        <Card variant='outlined'
+        sx={{ backgroundColor: '#242424', border: 'none' , color: 'white'}}
+        >
           bruh moment
         </Card>
       )}
