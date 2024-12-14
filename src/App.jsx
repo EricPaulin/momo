@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     <div className="container">
-      <h1> momo generator </h1>
+      <h1> <span className='bluey'>momo</span> generator </h1>
 
       {!image && (
       <Card variant='outlined'
@@ -41,10 +41,12 @@ function App() {
 
       {image && (
         <Card variant='outlined'
-        sx={{ backgroundColor: '#242424', border: 'none' , color: 'white'}}
+        sx={{ backgroundColor: '#434343', border: 'none' , color: 'white'}}
         >
           <CardContent>
             <img src={image} alt="Uploaded Momo"/>
+            <input type="text" id="topText"/>
+            <input type="text" id="bottomText"/>
           </CardContent>
         </Card>
       )}
