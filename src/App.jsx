@@ -32,14 +32,14 @@ function App() {
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
       const textPadding = 20;
-      const textFont = '30px Arial';
+
+      ctx.font = '30px "Comic Neue", cursive';
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
 
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
       ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 
-      ctx.font = textFont;
-      ctx.fillStyle = 'white';
-      ctx.textAlign = 'center';
       ctx.fillText(topText, canvasWidth / 2, textPadding);
 
       ctx.fillText(bottomText, canvasWidth / 2, canvasHeight - textPadding);
@@ -52,10 +52,10 @@ function App() {
 
   const handleDownload = () => {
     const canvas = canvasRef.current;
-    const dataUrl = canvas.toDataURL('image/png'); 
+    const dataUrl = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.href = dataUrl;
-    link.download = 'momo.png'; 
+    link.download = 'momo.png';
     link.click();
   };
 
