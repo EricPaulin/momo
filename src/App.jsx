@@ -7,6 +7,7 @@ function App() {
   const [image, setImage] = useState(null);
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
+  const [loading, setLoading] = useState(false);
   const canvasRef = useRef(null);
 
   const handleImageUpload = (event) => {
@@ -32,14 +33,14 @@ function App() {
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
       const textPadding = 20;
-      const textFont = '30px Arial';
+
+      ctx.font = '30px "Comic Neue", cursive';
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
 
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
       ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 
-      ctx.font = textFont;
-      ctx.fillStyle = 'white';
-      ctx.textAlign = 'center';
       ctx.fillText(topText, canvasWidth / 2, textPadding);
 
       ctx.fillText(bottomText, canvasWidth / 2, canvasHeight - textPadding);
@@ -51,12 +52,18 @@ function App() {
   }, [topText, bottomText, image]);
 
   const handleDownload = () => {
-    const canvas = canvasRef.current;
-    const dataUrl = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataUrl;
-    link.download = 'momo.png';
-    link.click();
+    setLoading(true);
+
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'momo.png';
+      link.click();
+
+      setLoading(false);
+    }, 3000);
   };
 
   return (
@@ -109,6 +116,12 @@ function App() {
               </div>
             </CardContent>
           </Card>
+        )}
+
+        {loading && (
+          <div className="loadingScreen">
+            <p>Generating your Momo</p>
+          </div>
         )}
 
         <div className="footer"> made by Cuddlefish © </div>
