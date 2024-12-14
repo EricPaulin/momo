@@ -1,22 +1,33 @@
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
 
 function App() {
+  const [image, setImage] = useState(null);
+  const [text, setText] = useState('');
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImage(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
-    <>
-      <div> this website will take in a user photo and generate a meme on top of it </div>
+    <div className="App">
+      <h1>mimi generator</h1>
 
       <input
-          className="button"
-          type="button"
-          id="bookmark"
-          placeholder="Enter bookmark"
-      >
-        Enter Image here
-      </input>
+        type="file"
+        accept="image/*"
+        onChange={handleImageUpload}
+      />
 
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

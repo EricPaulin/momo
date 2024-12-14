@@ -2,10 +2,11 @@ body {
   margin: 0;
 }
 
-.button{
+.generateButton{
   display: flex;
   justify-content: center;
   background-color: rgba(7, 20, 255, 0.87);
-  width: 50%;
+  width: 100%;
+  height: 100%;
 }
 
