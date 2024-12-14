@@ -126,7 +126,7 @@ function App() {
 
         {loading && (
           <div className="loadingScreen">
-            <p>Generating your meme... Please wait!</p>
+            <p>Generating your Momo</p>
           </div>
         )}
 
