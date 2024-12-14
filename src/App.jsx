@@ -92,25 +92,27 @@ function App() {
                 height={400}
                 style={{ display: 'block', marginTop: '20px' }}
               />
-              <div>
-                <input
-                  type="text"
-                  id="topText"
-                  placeholder="top txt"
-                  value={topText}
-                  onChange={(e) => setTopText(e.target.value)}
-                />
+              <div className='textContainer'>
+                <div>
+                  <input
+                    type="text"
+                    id="topText"
+                    placeholder="top txt"
+                    value={topText}
+                    onChange={(e) => setTopText(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="bottomText"
+                    placeholder="bottom txt"
+                    value={bottomText}
+                    onChange={(e) => setBottomText(e.target.value)}
+                  />
+                </div>
+                <button onClick={handleDownload}>MEMEIFY THAT BIH</button>
               </div>
-              <div>
-                <input
-                  type="text"
-                  id="bottomText"
-                  placeholder="bottom txt"
-                  value={bottomText}
-                  onChange={(e) => setBottomText(e.target.value)}
-                />
-              </div>
-              <button onClick={handleDownload}>MEMEIFY THAT BIH</button>
             </CardContent>
           </Card>
         )}
