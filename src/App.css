@@ -1,7 +1,5 @@
 body {
   margin: 0;
-  
-
 }
 
 .container {
@@ -15,19 +13,42 @@ body {
   height: 100vh;
 }
 
+.bluey{
+  color: aquamarine;
+}
+
 .generateBtn {
   width: 200px;
   height: 40px;
 }
 
+/* Meme Editor */
+
+.memeImg {
+  width: 300px;
+  height: 300px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: yellow;
+}
+
+.textContainer >input {
+  width: 90%;
+  margin: 4px;
+}
+
+/* Footer */
+
 .footer {
   position: absolute;
   right: 0;
   bottom: 0;
+  font-size: 12px;
   margin: 12px;
   color: white;
 }
 
-.bluey{
-  color: aquamarine;
-}

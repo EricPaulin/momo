@@ -62,10 +62,7 @@ function App() {
   return (
     <>
       <div className="container">
-
-        <h1>
-          <span className="bluey">momo</span> generator{' '}
-        </h1>
+        <h1> <span className='bluey'>momo</span> generator </h1>
 
         {!image && (
           <Card
