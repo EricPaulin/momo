@@ -26,18 +26,22 @@ function App() {
 
       {!image && (
       <Card variant='outlined'>
+        <CardContent>
         <input
           className='generateBtn'
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
         />
+        </CardContent>
       </Card>
       )}
 
       {image && (
         <Card variant='outlined'>
-          bruh moment
+          <CardContent>
+          <img src={image} alt="Uploaded"/>
+          </CardContent>
         </Card>
       )}
 
