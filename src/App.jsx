@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
 
 function App() {
   const [image, setImage] = useState(null);
@@ -18,14 +21,17 @@ function App() {
 
   return (
     <div className="container">
+
       <h1>mimi generator</h1>
 
-      <input
-        className='generateBtn'
-        type="file"
-        accept="image/*"
-        onChange={handleImageUpload}
-      />
+      <Card variant="outlined">
+        <input
+          className='generateBtn'
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+        />
+      </Card>
 
     </div>
   );
