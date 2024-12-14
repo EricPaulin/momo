@@ -17,10 +17,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>mimi generator</h1>
 
       <input
+        className='generateBtn'
         type="file"
         accept="image/*"
         onChange={handleImageUpload}
