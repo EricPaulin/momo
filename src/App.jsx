@@ -47,6 +47,9 @@ function App() {
             <img src={image} alt="Uploaded Momo"/>
             <input type="text" id="topText"/>
             <input type="text" id="bottomText"/>
+            <button>
+              MEMIFY THAT BIH
+            </button>
           </CardContent>
         </Card>
       )}
