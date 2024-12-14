@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div> hello </div>
+      <div> this website will take in a user photo and generate a meme on top of it </div>
     </>
   )
 }
