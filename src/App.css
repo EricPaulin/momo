@@ -1,11 +1,25 @@
 body {
   margin: 0;
+  
+
 }
 
-.button{
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: rgba(7, 20, 255, 0.87);
-  width: 50%;
+  align-items: center;
+  text-align: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(./images/pepe.jpg);
+  opacity: 0.5;
+}
+
+.generateBtn {
+  width: 100px;
+  height: 40px;
 }
 

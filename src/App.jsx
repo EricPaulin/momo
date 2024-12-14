@@ -4,17 +4,11 @@ function App() {
 
   return (
     <>
-      <div> this website will take in a user photo and generate a meme on top of it </div>
+      <div className="container">
+        <h1> meme generator </h1>
 
-      <input
-          className="button"
-          type="button"
-          id="bookmark"
-          placeholder="Enter bookmark"
-      >
-        Enter Image here
-      </input>
-
+        <button className='generateBtn'> Generate </button>
+      </div>
     </>
   )
 }
