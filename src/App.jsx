@@ -24,7 +24,7 @@ function App() {
 
       <h1>mimi generator</h1>
 
-      <Card variant="outlined">
+      <Card>
         <input
           className='generateBtn'
           type="file"
