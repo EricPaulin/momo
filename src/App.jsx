@@ -7,6 +7,7 @@ function App() {
   const [image, setImage] = useState(null);
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
+  const [loading, setLoading] = useState(false);
   const canvasRef = useRef(null);
 
   const handleImageUpload = (event) => {
@@ -51,12 +52,18 @@ function App() {
   }, [topText, bottomText, image]);
 
   const handleDownload = () => {
-    const canvas = canvasRef.current;
-    const dataUrl = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataUrl;
-    link.download = 'momo.png';
-    link.click();
+    setLoading(true);
+
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'momo.png';
+      link.click();
+
+      setLoading(false);
+    }, 3000);
   };
 
   return (
@@ -115,6 +122,12 @@ function App() {
               </div>
             </CardContent>
           </Card>
+        )}
+
+        {loading && (
+          <div className="loadingScreen">
+            <p>Generating your meme... Please wait!</p>
+          </div>
         )}
 
         <div className="footer"> made by Cuddlefish © </div>
