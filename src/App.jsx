@@ -11,7 +11,9 @@ function App() {
           type="button"
           id="bookmark"
           placeholder="Enter bookmark"
-        />
+      >
+        Enter Image here
+      </input>
 
     </>
   )
