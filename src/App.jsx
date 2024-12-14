@@ -20,8 +20,8 @@ function App() {
   };
 
   return (
+    <>
     <div className="container">
-
       <h1>mimi generator</h1>
 
       <Card>
@@ -33,7 +33,9 @@ function App() {
         />
       </Card>
 
-    </div>
+        <div className='footer'> made by Cuddlefish © </div>
+      </div>
+    </>
   );
 }
 

@@ -13,9 +13,6 @@ body {
 
   width: 100vw;
   height: 100vh;
-
-  background-image: url(./images/pepe.jpg);
-  opacity: 0.5;
 }
 
 .generateBtn {
@@ -23,3 +20,10 @@ body {
   height: 40px;
 }
 
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 12px;
+  color: white;
+}
