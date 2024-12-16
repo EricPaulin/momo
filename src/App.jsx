@@ -8,6 +8,7 @@ function App() {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
   const [loading, setLoading] = useState(false);
+  const [there, setThere] = useState(false);
   const canvasRef = useRef(null);
 
   const handleImageUpload = (event) => {
@@ -53,6 +54,8 @@ function App() {
 
   const handleDownload = () => {
     setLoading(true);
+    setThere(true);
+
 
     setTimeout(() => {
       const canvas = canvasRef.current;
@@ -61,7 +64,6 @@ function App() {
       link.href = dataUrl;
       link.download = 'momo.png';
       link.click();
-
       setLoading(false);
     }, 3000);
   };
@@ -118,11 +120,13 @@ function App() {
           </Card>
         )}
 
+
         {loading && (
           <div className="loadingScreen">
-            <p>Generating your Momo</p>
+            <img src="src\images\peter-griffin-3d.gif"/>
           </div>
         )}
+
 
         <div className="footer"> made by Cuddlefish © </div>
       </div>
