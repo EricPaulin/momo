@@ -71,7 +71,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1> <span className='bluey'>momo</span> generator </h1>
+        <h1> <a className='bluey' href='/' >momo</a> generator </h1>
 
         {!image && (
           <Card
@@ -92,9 +92,16 @@ function App() {
         {image && (
           <Card
             variant="outlined"
-            sx={{ backgroundColor: '#434343', border: 'none', color: 'white' }}
+            sx={{ backgroundColor: '#434343', width: '350px', height: '55%',
+              display: 'flex', justifyContent: 'center', alignContent: 'center', 
+            }}
           >
-            <CardContent>
+            <CardContent
+              sx={{ width: '100%', height: '100%',
+                display: 'flex', flexDirection: 'column',justifyContent: 'center', 
+                alignItems: 'center'
+              }}
+            >
               {/* Meme Image Edit */}
               <canvas ref={canvasRef} />
 
@@ -120,13 +127,13 @@ function App() {
           </Card>
         )}
 
-
+        {/* Meme Image Edit */}
         {loading && (
           <div className="loadingScreen">
             <img src="src\images\peter-griffin-3d.gif"/>
+            <h2> DOWNLOADING MEEM </h2>
           </div>
         )}
-
 
         <div className="footer"> made by Cuddlefish © </div>
       </div>
